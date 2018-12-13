@@ -1,0 +1,8 @@
+(test (run "Im_a_test") =error> "") ;;BASIC 
+(test (run "{ reg-len = 2 }") =error> "") ;;BASIC
+(test (run "{ reg-len 2  }") =error> "") ;;BASIC
+(test (run "{ reg-len {1 0} }") =error> "") ;;BASIC
+(test (run "{ reg-len = {1 0} }") =error> "") ;;BASIC
+(test (run "{ reg-len = 2 {1 0} }") => '(1 0)) ;;BASIC
+(test (run "{ reg-len = 0 {}}") =error> "") ;;BASIC
+(test (run "{ reg-len = 3 {1 0 0 0}}") =error> "") ;;BASIC
